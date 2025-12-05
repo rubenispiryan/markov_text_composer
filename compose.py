@@ -50,6 +50,8 @@ class MCTextComposer:
         self._generate_graph_recursive(path)
 
     def compose_random_chain(self, length: int = 50):
+        if self._words is None:
+            return ""
         return self._compose(random.choice(self._words), length)
 
     def compose_chain_from(self, word: str, length: int = 50):
